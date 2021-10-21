@@ -34,15 +34,21 @@
         display: block;
         text-align: center ;
     }
-
+    
     #nav .sub-nav{
         position: initial;
-        background: #362e2e;
+        background: #9f9f9f;
+
     }
 
     #nav .sub-nav a{
         padding: 5px 42px;
+        color: #000;
+    }
+
+    #nav .sub-nav li:hover a {
         color: #fff;
+        background-color: #36343466;
     }
 
 

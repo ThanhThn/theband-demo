@@ -257,9 +257,10 @@
     <script>
         const menuIcon = document.getElementById("menu-icon");
         var heading = document.getElementById("header");
+        var sub_heading = document.getElementsByClassName(".sub-nav");
         var headingHeight = heading.clientHeight;
-        var menuItems = document.querySelectorAll("#nav li a[href*= '#']");
-        
+        var sub_nav = document.querySelectorAll("#nav li a[href*= '#']");
+
         function on_offMenu(){
             var onMenu = heading.clientHeight === headingHeight;
             if (onMenu){
@@ -270,10 +271,10 @@
         }
         menuIcon.addEventListener('click', on_offMenu);
 
-        for (let i = 0; i < menuItems.length; i++) {
-            var menuItem = menuItems[i];
-            
-            menuItem.onclick = function (event) {
+        for (let i = 0; i < sub_nav.length; i++) {
+            var menuItem = sub_nav[i];
+
+            menuItem.onclick = function (event){
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('sub-nav') ;
                 if (!isParentMenu) {
                     heading.style.height = null;
@@ -281,12 +282,13 @@
                     event.preventDefault();
                 }
             }
-        }
 
+        }
         menuIcon.addEventListener('click', function(even){
             even.stopPropagation();
         })
     </script>
+
     <script>
         var slides_tour = document.querySelectorAll("#slider .slider-list");
         var sliderIndex =  0;
